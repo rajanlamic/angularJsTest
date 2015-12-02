@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="../../angular.js"></script>
+    <script src="factory.js"></script>
+  </head>
+      
+  <body>
+      <div ng-app="factoryTest" ng-controller="factoryTestController">
+          <hr>
+          factory
+          <hr>
+          <div>{{sitem.sname}}</div>
+          <div>{{sitem.saddress}}</div>
+          <hr>
+          service
+          <hr>
+          <div>{{item.name}}</div>
+          <div>{{item.address}}</div>
+          <hr>
+          provider
+          <hr>
+          <div>{{pitem}}</div>
+          <div>{{thingFromConfig}}</div>
+      </div>
+      
+      
+  </body>
+</html>

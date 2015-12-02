@@ -1,0 +1,29 @@
+<!--http://localhost/wampangular/public_html/tests/Data-binding/digital-clock/clock.html-->
+
+<!doctype html>
+<html ng-app>
+    <head>
+        <script src="../../../angular.js"></script>
+    </head>
+    <body>
+        <div ng-controller="MyController">
+            <h4> {{ clock}}</h4>
+            <br>
+            <h2>Hey luke</h2>
+        </div>
+        <script type="text/javascript">
+            function MyController($scope) {
+                $scope.clock = new Date();
+                var updateClock = function() {
+                    $scope.clock = new Date();
+                };
+                setInterval(function() {
+                    $scope.$apply(updateClock);
+//                    $scope.clock = new Date();
+                }, 1000);
+                updateClock();
+            }
+            ;
+        </script>
+    </body>
+</html>

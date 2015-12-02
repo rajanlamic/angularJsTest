@@ -1,0 +1,17 @@
+<!--http://localhost/wampangular/public_html/tests/expression/parse/parse.html -->
+
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <script src="../../angular.js"></script>
+    </head>
+    <body>
+        <div ng-controller="MyController">
+            <input ng-model="expr"
+                   type="text"
+                   placeholder="Enter an expression" />
+            <h2>d{{ parsedValue}} -- {{ expr}}</h2>
+        </div>
+        <script src="parse.js"></script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <p><h1>Test</h1></p>
+<script>
+    angularT = {};
+    function setupModuleLoaderT(window) {
+        function ensureT(obj, name, factory) {
+            if (obj[name]) {
+                console.log(name + ' already created');
+                return obj[name];
+            } else {
+                console.log(name + ' just creating');
+                return obj[name] = factory();
+            }
+            //return obj[name] || (obj[name] = factory());
+        }
+        return ensureT(angularT, 'module', function() {
+            var modulesT = {};
+            return function moduleT(name, requires, configFn) {
+                return ensureT(modulesT, name, function() {
+                    var moduleInstanceT = {
+                        name: name,
+                        requires: requires
+                    }
+                    return moduleInstanceT;
+                });
+            }
+        });
+    }
+    angularModuleT = setupModuleLoaderT(window);
+    console.log('angularModuleT', angularModuleT.getModules);
+    console.log('angularT.module.prototype', angularT.module.prototype);
+    console.log('angularT.module.prototype.constructor', angularT.module.prototype.constructor);
+    
+    angularT.module('one', []);
+    angularT.module('two', []);
+    angularT.module('one');
+    
+    console.log("modulesT['one']", modulesT['one']);
+    
+</script>
+
+</body>
+</html>

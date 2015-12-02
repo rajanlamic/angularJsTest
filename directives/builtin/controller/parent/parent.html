@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="../../../../angular.js"></script>
+    </head>
+    <div ng-app="myApp">
+        <div ng-controller="parentController">
+            <button ng-click="parentClick()">Par</button>
+            <div ng-controller="childController">
+                <button ng-click="parentClick()">Chl</button>
+                child val = {{chlVal }} <br>
+                par val = {{ parVal }}
+            </div>
+        </div>
+    </div>
+    
+     <script src="parent.js"></script>
+</body>
+</html>

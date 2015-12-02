@@ -1,0 +1,15 @@
+<!--http://localhost/wampangular/public_html/tests/expression/parse/parse.html -->
+
+<!doctype html>
+<html>
+    <head>
+        <script src="../../../angular.js"></script>
+    </head>
+    <body>
+
+        <div ng-app="myApp" ng-controller="MyController">
+           {{ today | date:'medium' | uppercase }}
+        </div>
+        <script src="date.js"></script>
+    </body>
+</html>
